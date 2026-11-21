@@ -22,19 +22,18 @@ func main() {
 	}
 
 	// TODO: Uncomment the code below to pass the first stage
-	
+
 	filename := os.Args[2]
 	fileContents, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error reading file: %v\n", err)
 		os.Exit(1)
 	}
-	
+
 	if len(fileContents) > 0 {
-		fmt.Print("Logging: " , fileContents)
+		fmt.Print("Logging: ", string(fileContents))
 		panic("Scanner not implemented")
 	} else {
 		fmt.Println("EOF  null") // Placeholder, replace this line when implementing the scanner
 	}
 }
-
