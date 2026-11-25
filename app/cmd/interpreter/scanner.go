@@ -25,7 +25,10 @@ func TokenType(ch byte) (string, error) {
 		return "COMMA", nil
 	case '+':
 		return "PLUS", nil
-
+	case ';':
+		return "SEMICOLON", nil
+	case '/':
+		return "SLASH",nil
 	case '-':
 		return "MINUS", nil
 	default:
