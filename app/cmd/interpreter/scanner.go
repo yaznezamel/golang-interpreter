@@ -25,6 +25,9 @@ func TokenType(ch byte) (string, error) {
 		return "COMMA", nil
 	case '+':
 		return "PLUS", nil
+
+	case '-':
+		return "MINUS", nil
 	default:
 		return "", fmt.Errorf("unexpected character: %c", ch)
 	}
