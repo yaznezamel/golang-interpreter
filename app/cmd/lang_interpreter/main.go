@@ -31,7 +31,6 @@ func main() {
 	}
 
 	if len(fileContents) > 0 {
-		fmt.Print("Logging: =============", string(fileContents))
 		panic("Scanner not implemented")
 	} else {
 		fmt.Println("EOF  null") // Placeholder, replace this line when implementing the scanner
