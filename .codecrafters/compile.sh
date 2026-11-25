@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-go build -o /tmp/codecrafters-build-interpreter-go app/cmd/lang_interpreter.go
+go build -o /tmp/codecrafters-build-interpreter-go ./app/cmd/lang_interpreter
