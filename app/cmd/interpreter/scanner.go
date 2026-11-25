@@ -14,6 +14,11 @@ func TokenType(ch byte) (string,error){
 		return "LEFT_PAREN", nil
 	case ')':
 		return "RIGHT_PAREN", nil
+
+	case '{':
+		return "LEFT_BRACE", nil
+	case '}':
+		return "RIGHT_BRACE", nil
 	default:
 		return "", fmt.Errorf("unexpected character: %c" ,ch)
 	}
