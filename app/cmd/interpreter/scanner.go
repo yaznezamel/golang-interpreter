@@ -18,7 +18,7 @@ func TokenType(ch byte) (string, error) {
 	case '}':
 		return "RIGHT_BRACE", nil
 	case '*':
-		return "START", nil
+		return "STAR", nil
 	case '.':
 		return "DOT", nil
 	case ',':
