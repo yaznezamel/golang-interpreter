@@ -3,6 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
+
+	"github.com/codecrafters-io/interpreter-starter-go/app/cmd/interpreter"
 )
 
 func main() {
@@ -31,7 +34,20 @@ func main() {
 	}
 
 	if len(fileContents) > 0 {
-		panic("Scanner not implemented")
+		var out strings.Builder
+		for _, ch := range fileContents {
+			if ch == ' ' || ch == '\r' || ch == '\t' || ch == '\n' {
+				continue
+			}
+			tokenType, err := interpreter.TokenType(ch)
+			if err != nil {
+				fmt.Fprintln(os.Stderr, err)
+				continue
+			}
+			fmt.Fprintf(&out, "%s %c null\n", tokenType, ch)
+		}
+		out.WriteString("EOF  null")
+		fmt.Println(out.String())
 	} else {
 		fmt.Println("EOF  null") // Placeholder, replace this line when implementing the scanner
 	}
